@@ -112,22 +112,26 @@ Defining a group is done in the hosts file.
 
 1. Create a password file
 
-```export ANSIBLE_VAULT_PASSWORD_FILE=$HOME/.vault-pass
+```
+export ANSIBLE_VAULT_PASSWORD_FILE=$HOME/.vault-pass
 echo 'password' > $ANSIBLE_VAULT_PASSWORD_FILE`
 ```
 
 2. Encrypt secrets files. This will automatically read ANSIBLE_VAULT_PASSWORD_FILE
 
-`ansible-vault encrypt inventories/development/group_vars/env.secret.yml`
-
+```
+ansible-vault encrypt inventories/development/group_vars/env.secret.yml
+```
 
 3. Check encrypted file
 
-```cat inventories/development/hosts.yml
+```
+cat inventories/development/hosts.yml
 ansible-vault view inventories/development/group_vars/env.secret.yml
 ```
 
 4. Run playbook that renders dotenv template
 
-`ansible-playbook -i inventories/development/hosts.yml playbooks/copy_env_file.yml`
-
+```
+ansible-playbook -i inventories/development/hosts.yml playbooks/copy_env_file.yml
+```
