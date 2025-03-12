@@ -1,0 +1,8 @@
+- name: list hosts
+  hosts: all
+  # The next option causes the playbook to run hosts in series, so it runs first for app1 then for db1.
+  # Without this option playook will be executed on all hosts task per task, so first task on each host in series then second task.  
+  serial: 1 
+  tasks:
+  - debug:
+      var: ansible_play_batch #Special variable that prints the current host that is being conencted to 

@@ -1,0 +1,8 @@
+- name: copy env files
+  hosts: app
+  tasks:
+  # Template module renders jinja template from host variables. See README to understand how variables work in ansible
+  - name: generate env file
+    template:
+      src: '{{playbook_dir}}/templates/env.j2'
+      dest: '{{playbook_dir}}/env'
