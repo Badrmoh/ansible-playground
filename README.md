@@ -17,7 +17,7 @@ There are two main directories in this repository:
 
 
 **inventories**: here hosts and variables are defined
-
+```
 ├── development
 │   ├── group_vars
 │   │   ├── all.yml
@@ -36,25 +36,26 @@ There are two main directories in this repository:
     │   ├── env.secret.yml
     │   └── env.yml
     └── hosts.yml
+```
 
 **playbooks**: here ansible scripts (playbooks) are defined
-
+```
 ├── copy_env_file.yml
 ├── list_hosts.yml
 └── templates
     └── env.j2
-
+```
 
 ## Inventories
 
 An inventory is a collection of hosts. Under inventories directory, there can be multiple sub-directories, each should have certain structure:
-
+```
 ├── group_vars
 │   ├── all.yml
 │   ├── env.secret.yml
 │   └── env.yml
 └── hosts.yml
-
+```
 
 ### Hosts
 
